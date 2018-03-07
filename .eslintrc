@@ -1,0 +1,17 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "standard-react"],
+  "globals": {
+    "chrome": true
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "react/prop-types": 0
+  },
+  "plugins": [
+    "react"
+  ]
+}

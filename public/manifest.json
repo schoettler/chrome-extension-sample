@@ -1,0 +1,21 @@
+{
+  "name": "Example App",
+  "version": "0.0.1",
+  "description": "Chrome Extension's message passing example",
+  "permissions": [
+    "<all_urls>",
+    "webRequest",
+    "webRequestBlocking",
+    "background",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_action": {
+    "default_title": "Example App",
+    "default_popup": "index.html"
+  },
+  "manifest_version": 2,
+  "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://maxcdn.bootstrapcdn.com/; object-src 'self'"
+}
