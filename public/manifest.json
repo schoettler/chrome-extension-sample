@@ -10,11 +10,11 @@
     "activeTab"
   ],
   "background": {
-    "scripts": ["background.js"]
+    "page": "background.html"
   },
   "browser_action": {
     "default_title": "Example App",
-    "default_popup": "index.html"
+    "default_popup": "popup.html"
   },
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' https://ajax.googleapis.com https://maxcdn.bootstrapcdn.com/; object-src 'self'"
