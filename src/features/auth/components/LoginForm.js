@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Loading } from '../../../common/components'
 
 export class LoginForm extends Component {
   constructor () {
@@ -36,10 +37,10 @@ export class LoginForm extends Component {
 
   render () {
     return (
-      <form name='login' onSubmit={this.handleValidation}>
+      <form name='auth' onSubmit={this.handleValidation}>
         <h1>Login to Windscribe</h1>
         <div>
-          <label forHtml='username'>
+          <label forhtml='username'>
             Username
           </label>
           <input
@@ -48,18 +49,19 @@ export class LoginForm extends Component {
           />
         </div>
         <div>
-          <label forHtml='password'>
+          <label forhtml='password'>
             Password
           </label>
           <input
             name='password'
             type='password'
-            onChange={this.updateUsername}
+            onChange={this.updatePassword}
           />
         </div>
         <div>
           <button type='submit'>Login</button>
         </div>
+        <Loading />
       </form>
     )
   }

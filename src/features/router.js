@@ -1,12 +1,12 @@
 import React from 'react'
 import { Route } from 'react-router'
 import { ConnectedRouter } from 'react-router-redux'
-import { LoginContainer } from './login/login.container'
+import AuthContainer from './auth/auth.container'
 
 export const Router = ({ history }) => (
-  <div style={{ width: '300px', height: '300px' }}>
+  <div style={{ width: '200px', height: '300px' }}>
     <ConnectedRouter history={history}>
-      <Route path='/' component={LoginContainer} />
+      <Route path='/' component={AuthContainer} />
     </ConnectedRouter>
   </div>
 )
