@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Loading } from '../../../common/components'
 
 export class LoginForm extends Component {
   constructor () {
@@ -61,7 +60,6 @@ export class LoginForm extends Component {
         <div>
           <button type='submit'>Login</button>
         </div>
-        <Loading />
       </form>
     )
   }

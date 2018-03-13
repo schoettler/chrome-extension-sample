@@ -6,6 +6,7 @@ describe('common utils actions tests', () => {
   const mockAsyncConstants = {
     REQUEST: 'MOCK_CONSTANT_ASYNC_ACTION_REQUEST',
     SUCCESS: 'MOCK_CONSTANT_ASYNC_ACTION_SUCCESS',
+    CANCEL: 'MOCK_CONSTANT_ASYNC_ACTION_CANCEL',
     FAILURE: 'MOCK_CONSTANT_ASYNC_ACTION_FAILURE'
   }
 
@@ -41,6 +42,9 @@ describe('common utils actions tests', () => {
         },
         failure: {
           type: 'MOCK_CONSTANT_ASYNC_ACTION_FAILURE'
+        },
+        cancel: {
+          type: 'MOCK_CONSTANT_ASYNC_ACTION_CANCEL'
         }
       }
       expect(createActionSpy).toHaveBeenCalledTimes(3)

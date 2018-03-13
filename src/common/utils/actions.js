@@ -1,6 +1,6 @@
 import { createAction } from 'redux-actions'
 
-const asyncActionStatuses = ['REQUEST', 'SUCCESS', 'FAILURE']
+const asyncActionStatuses = ['REQUEST', 'SUCCESS', 'FAILURE', 'CANCEL']
 
 export const createAsyncActionConstants = constant => asyncActionStatuses.reduce(
   (constants, status) => ({

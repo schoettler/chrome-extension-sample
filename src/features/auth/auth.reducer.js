@@ -3,7 +3,7 @@ import { LOGIN } from './auth.constants'
 
 export const initialState = {
   username: '',
-  loading: false,
+  isLoading: false,
   error: null
 }
 
@@ -11,12 +11,16 @@ export default handleActions(
   {
     [LOGIN.REQUEST]: (state) => ({
       ...state,
-      loading: true
+      isLoading: true
     }),
     [LOGIN.SUCCESS]: (state, { payload: { username } }) => ({
       ...state,
-      loading: false,
+      isLoading: false,
       username
+    }),
+    [LOGIN.CANCEL]: (state) => ({
+      ...state,
+      isLoading: false
     })
   },
   initialState
