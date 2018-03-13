@@ -2,21 +2,26 @@ import { handleActions } from 'redux-actions'
 import { LOGIN } from './auth.constants'
 
 export const initialState = {
-  username: '',
+  isAuthenticated: false,
   isLoading: false,
   error: null
 }
 
-export default handleActions(
+export const authReducer = handleActions(
   {
     [LOGIN.REQUEST]: (state) => ({
       ...state,
       isLoading: true
     }),
-    [LOGIN.SUCCESS]: (state, { payload: { username } }) => ({
+    [LOGIN.SUCCESS]: (state) => ({
       ...state,
       isLoading: false,
-      username
+      isAuthenticated: true
+    }),
+    [LOGIN.FAILURE]: (state) => ({
+      ...state,
+      isLoading: false,
+      isAuthenticated: false
     }),
     [LOGIN.CANCEL]: (state) => ({
       ...state,

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { goTo } from 'route-lite'
+import MainContainer from '../../main/main.container'
 
 export class LoginForm extends Component {
   constructor () {
@@ -59,6 +61,7 @@ export class LoginForm extends Component {
         </div>
         <div>
           <button type='submit'>Login</button>
+          <button type='button' onClick={() => goTo(MainContainer)}>Hax</button>
         </div>
       </form>
     )
