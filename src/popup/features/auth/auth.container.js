@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { loginAction } from './auth.actions'
 import { LoginForm } from './components/LoginForm'
-import { Loading } from '../../common/components'
 
 class AuthContainer extends Component {
   constructor () {
@@ -16,17 +15,13 @@ class AuthContainer extends Component {
   }
 
   render () {
-    const { isLoading, login } = this.props
+    const { login } = this.props
 
-    return isLoading
-      ? <Loading handleCancel={this.handleCancel} />
-      : <LoginForm handleSubmit={login} />
+    return <LoginForm handleSubmit={login} />
   }
 }
 
-const mapStateToProps = (state) => ({
-  isLoading: state.auth.isLoading
-})
+const mapStateToProps = (state) => ({})
 
 const mapDispatchToProps = {
   login: loginAction.request,

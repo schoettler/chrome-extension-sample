@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import { authReducer } from './auth/auth.reducer'
-import { routerReducer } from './router/router.reducer'
+import { authReducer } from './popup/features/auth/auth.reducer'
+import { routerReducer } from './popup/features/router/router.reducer'
 
 const reducerMap = {
   auth: authReducer,

@@ -1,12 +1,15 @@
 import { handleActions } from 'redux-actions'
 import { REDIRECT } from './router.constants'
 
-export const initialState = {}
+export const initialState = {
+  view: 'login'
+}
 
 export const routerReducer = handleActions(
   {
-    [REDIRECT]: (state) => ({
-      ...state
+    [REDIRECT]: (state, { payload }) => ({
+      ...state,
+      view: payload
     })
   },
   initialState

@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions'
-import { LOGIN } from './auth.constants'
+import { LOGIN, LOGOUT } from './auth.constants'
 
 export const initialState = {
   isAuthenticated: false,
@@ -26,6 +26,9 @@ export const authReducer = handleActions(
     [LOGIN.CANCEL]: (state) => ({
       ...state,
       isLoading: false
+    }),
+    [LOGOUT]: (state) => ({
+      isAuthenticated: false
     })
   },
   initialState

@@ -2,9 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { Store } from 'react-chrome-redux'
-import Router from 'route-lite'
+import Router from './features/router/router.container'
 import { extensionPort } from '../port'
-import MainContainer from '../features/main/main.container'
 
 const store = new Store(extensionPort)
 
@@ -13,9 +12,7 @@ store.ready()
     ReactDOM.render(
       <Provider store={store}>
         <div style={{ height: '250px', 'width': '250px' }}>
-          <Router>
-            <MainContainer />
-          </Router>
+          <Router />
         </div>
       </Provider>,
       document.getElementById('root')
