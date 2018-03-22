@@ -11,16 +11,17 @@ class MainContainer extends Component {
     if (!isAuthenticated) {
       console.log('unauthorized')
       return goTo(AuthContainer)
+    } else {
+      console.log('welcome')
     }
-    console.log('welcome')
   }
 
   render () {
-    const { logoutAction } = this.props
+    const { logout } = this.props
     return (
       <div>
         <span>Main Container</span>
-        <button type='button' onClick={logoutAction}>
+        <button type='button' onClick={() => logout()}>
           Logout
         </button>
       </div>

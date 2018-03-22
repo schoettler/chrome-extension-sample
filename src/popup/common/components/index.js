@@ -1,1 +1,2 @@
-export { Loading } from './Loading'
+export { Loading } from './loading'
+export { Error } from './error'

@@ -4,7 +4,7 @@ import { LOGIN, LOGOUT } from './auth.constants'
 export const initialState = {
   isAuthenticated: false,
   isLoading: false,
-  error: null
+  errorMessage: null
 }
 
 export const authReducer = handleActions(
@@ -13,19 +13,20 @@ export const authReducer = handleActions(
       ...state,
       isLoading: true
     }),
-    [LOGIN.SUCCESS]: (state) => ({
+    [LOGIN.SUCCESS]: (state, action) => ({
       ...state,
       isLoading: false,
-      isAuthenticated: true
+      isAuthenticated: true,
+      user: action.payload
     }),
-    [LOGIN.FAILURE]: (state) => ({
+    [LOGIN.FAILURE]: (state, action) => ({
       ...state,
       isLoading: false,
-      isAuthenticated: false
+      isAuthenticated: false,
+      errorMessage: action.payload
     }),
     [LOGIN.CANCEL]: (state) => ({
-      ...state,
-      isLoading: false
+      ...initialState
     }),
     [LOGOUT]: (state) => ({
       isAuthenticated: false

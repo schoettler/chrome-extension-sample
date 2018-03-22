@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import RouterLite from 'route-lite'
-import { Loading } from '../../common/components'
 import AuthContainer from '../auth/auth.container'
 import MainContainer from '../main/main.container'
 
@@ -12,15 +11,12 @@ const mapViews = {
 
 class Router extends Component {
   render () {
-    const { isLoading, view } = this.props
+    const { view } = this.props
 
     return (
       <div style={{ height: '250px', 'width': '250px' }}>
         <RouterLite>
-          {isLoading
-            ? <Loading />
-            : mapViews[view]
-          }
+          {mapViews[view]}
         </RouterLite>
       </div>
     )
@@ -29,7 +25,6 @@ class Router extends Component {
 
 const mapStateToProps = (state) => ({
   isAuthenticated: state.router.isAuthenticated,
-  isLoading: state.auth.isLoading,
   view: state.router.view
 })
 
