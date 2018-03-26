@@ -1,6 +1,7 @@
 import { createLogic } from 'redux-logic'
 import { authenticate } from '../../../background/api/auth'
 import { redirectAction } from '../router/router.actions'
+import { initAction } from '../main/main.actions'
 import { loginAction } from './auth.actions'
 import { LOGIN, LOGOUT } from './auth.constants'
 
@@ -10,14 +11,14 @@ const loginLogic = createLogic({
   process ({ action }, dispatch, done) {
     authenticate(action.payload)
       .then((user) => {
-        console.log(user)
         dispatch(loginAction.success(action.payload))
         dispatch(redirectAction('main'))
+        dispatch(initAction())
       })
       .catch((error) => {
         dispatch(loginAction.failure(error))
       })
-      .finally(() => done())
+      .finally(done)
   }
 })
 

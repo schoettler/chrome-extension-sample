@@ -1,5 +1,5 @@
 {
-  "name": "chrome-extension",
+  "name": "chrome-extension-sample",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
@@ -63,7 +63,6 @@
     "route-lite": "^0.3.0"
   },
   "scripts": {
-    "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "lint": "eslint src/"

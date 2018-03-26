@@ -1,15 +1,23 @@
-this.selectedCountryIndex = -1
+const ParamsService = {
+  selectedCountryIndex: -1,
 
-export const getCountries = Promise.resolve([
-  { name: 'Canada' },
-  { name: 'United States' },
-  { name: 'Mexico' },
-  { name: 'United Kingdom' },
-  { name: 'France' }
-])
+  getCountries: Promise.resolve([
+    { name: 'Canada', index: '0' },
+    { name: 'United States', index: '1' },
+    { name: 'Mexico', index: '2' },
+    { name: 'United Kingdom', index: '3' },
+    { name: 'France', index: '4' }
+  ]),
 
-export const getSelectedCountryIndex = () => this.selectedCountryIndex
+  getSelectedCountryIndex: () =>
+    Promise.resolve(ParamsService.selectedCountryIndex),
 
-export const setSelectedCountryIndex = (index) => {
-  this.setSelectedCountryIndex = index
+  setSelectedCountryIndex: (index) => new Promise(resolve => {
+    ParamsService.selectedCountryIndex = index
+    resolve()
+  })
 }
+
+export const getCountries = ParamsService.getCountries
+export const getSelectedCountryIndex = ParamsService.getSelectedCountryIndex
+export const setSelectedCountryIndex = ParamsService.setSelectedCountryIndex

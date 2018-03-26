@@ -1,4 +1,5 @@
 import { handleActions } from 'redux-actions'
+import { requestActionHandler } from '../../common/utils'
 import { LOGIN, LOGOUT } from './auth.constants'
 
 export const initialState = {
@@ -9,10 +10,7 @@ export const initialState = {
 
 export const authReducer = handleActions(
   {
-    [LOGIN.REQUEST]: (state) => ({
-      ...state,
-      isLoading: true
-    }),
+    [LOGIN.REQUEST]: requestActionHandler,
     [LOGIN.SUCCESS]: (state, action) => ({
       ...state,
       isLoading: false,

@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { goTo } from 'route-lite'
-import MainContainer from '../../main/main.container'
 
 export class LoginForm extends Component {
   constructor () {
@@ -39,7 +37,7 @@ export class LoginForm extends Component {
   render () {
     return (
       <form name='auth' onSubmit={this.handleValidation}>
-        <h1>Login to Windscribe</h1>
+        <h1>Login</h1>
         <div>
           <label forhtml='username'>
             Username
@@ -61,7 +59,6 @@ export class LoginForm extends Component {
         </div>
         <div>
           <button type='submit'>Login</button>
-          <button type='button' onClick={() => goTo(MainContainer)}>Hax</button>
         </div>
       </form>
     )

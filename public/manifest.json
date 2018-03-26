@@ -1,5 +1,5 @@
 {
-  "name": "Example App",
+  "name": "Chrome Extension Sample",
   "version": "0.0.1",
   "description": "Chrome Extension's message passing example",
   "permissions": [
@@ -13,7 +13,7 @@
     "page": "background.html"
   },
   "browser_action": {
-    "default_title": "Example App",
+    "default_title": "Chrome Extension Sample",
     "default_popup": "popup.html"
   },
   "manifest_version": 2,

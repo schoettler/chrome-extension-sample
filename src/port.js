@@ -1,3 +1,3 @@
 export const extensionPort = {
-  portName: 'WINDSCRIBE_DEMO'
+  portName: 'EXTENSION_SAMPLE'
 }
